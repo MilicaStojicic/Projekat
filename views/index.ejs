@@ -1,0 +1,32 @@
+<html>
+
+<head>
+    <title> Book store</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+</head>
+
+<body style="background-color:  gray;">
+    <i class="fas fa-book" style="font-size: 70px; padding-left: 35%; padding-top: 2%;color: white;"> &nbsp;Book store</i>
+
+    <br>
+    <br>
+    <div class="row " style="margin-left: 2%;">
+        <% for(var i =0;i<knjiga.length;i++) { %>
+        <div class="col-md-3 justify-content-center">
+            <div class="card" style="width: 18rem;border: none;">
+                <img src="<%= knjiga[i].slika %>" class="card-img-top" alt="">
+                <div class="card-body">
+                  <h5 class="card-title"><%= knjiga[i].ime %></h5>
+                  <p class="card-text"><%= knjiga[i].pisac %></p>
+                  <h2> <%= knjiga[i].cena %> din</h2>
+                  <a href="<%= `/api/naruci/${knjiga[i].ime}` %>" class="btn btn-primary">Kupi</a>
+                </div>
+              </div>    
+        </div>
+        <% } %>
+    </div>
+
+</body>
+
+</html>

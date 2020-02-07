@@ -1,0 +1,7 @@
+{
+  "Customer": {
+    "dbConfig": {
+      "dbAddress": "mongodb+srv://nikolajonic:riznicamudrosti2@cluster0-rxied.mongodb.net/MilicaBS?retryWrites=true&w=majority"
+    }
+  }
+}

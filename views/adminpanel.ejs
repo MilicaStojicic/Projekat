@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Book Store</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css" />
+</head>
+
+<body style="background-color:  #679443;">
+    <i class="fas fa-book" style="font-size: 70px; margin-left: 23%; margin-top: 2%;color: white;"> &nbsp;Book store
+        admin panel</i>
+
+    <br>
+    <br>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active disabled" href="#" style="width: 140xp;height: 40px; background-color: #225c11; color: #679443;">Sve narudzbine</a>
+        </li>
+        &nbsp;&nbsp;
+        <li class="nav-item">
+            <a class="nav-link" href="/admin/novaknjiga" style="width: 140xp;height: 40px; background-color: white;color: #679443;">Nova knjiga</a>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-md-8" style="margin-left: 15%;">
+            <table class="table" style="margin-top: 3%; color: white;">
+                <thead>
+                    <tr>
+                        <th scope="col">Br narudzbine</th>
+                        <th scope="col">Ime knjige</th>
+                        <th scope="col">Ime i prezime</th>
+                        <th scope="col">Drzava</th>
+                        <th scope="col">Grad</th>
+                        <th scope="col">Adresa</th>
+                        <th scope="col">Opcije</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if(narudzbine.length>0) { %>
+                    <% for(var i =0;i<narudzbine.length;i++) { %>
+                    <tr>
+                        <th scope="row"><%= i %></th>
+                        <td><%= narudzbine[i].imeknjige %></td>
+                        <td><%= narudzbine[i].ime %></td>
+                        <td><%= narudzbine[i].drzava %></td>
+                        <td><%= narudzbine[i].grad %></td>
+                        <td><%= narudzbine[i].adresa %></td>
+                        <td><form action="<%= `/admin/${narudzbine[i].id}` %>" method="post"><button style="color: red;"><i class="fas fa-trash-alt">Delete</i></button></form></td>
+                    </tr>
+                    <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+
+</html>
